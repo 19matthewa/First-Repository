@@ -4,12 +4,42 @@ import java.nio.charset.StandardCharsets;
 
 public class MyFileWriter {
     public static void main(String[] args) {
+
+        /**
+         * 1. **Code your MyFileWriter.java** using your chosen writer to create:
+    - A **hidden file** (e.g., `.secretpassword.txt`) in the repository's root directory, containing a password
+    - A **regular file** (e.g., `confidential.dat`) within a **hidden folder** (e.g., `.classified`) in the repository, containing top-secret data
+    - Use unique names for these files, different from the examples provided
+         */
+
         String data = "Hello, World!";
         String fileName1 = "example1.txt";
         String fileName2 = "example2.txt";
         String fileName3 = "example3.txt";
         String fileName4 = "example4.txt";
         String fileName5 = "example5.txt";
+        String hiddenFileName = ".hiddenFile";
+        String regularFileName = "regularFile";
+        String hiddenFolderFilePath = "/Users/matthewahn/desktop/HTopics/First Repository/.hiddenFolder/";
+
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(hiddenFileName))){
+            bufferedWriter.write("fun");
+        }
+        catch(Exception e){
+            System.out.print(e);
+        }
+
+        //how to 
+        // create file named regular file in already existing .hiddenFolder
+        // then write funner into the file
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(hiddenFolderFilePath+regularFileName))){
+            bufferedWriter.write("funner");
+        }
+        catch(Exception e){
+            System.out.print(e);
+        }
+
+
 
         // 1. Using FileWriter
         try (FileWriter writer = new FileWriter(fileName1)) {
