@@ -76,8 +76,9 @@ public class MyFileWriter {
             e.printStackTrace();
         }
 
-        public static void printFileSize (String filename){
-
-        }
+        printFileSize(regularFileName);
+    }
+    public static void printFileSize (String filename){
+        System.out.println(filename.length());
     }
 }
