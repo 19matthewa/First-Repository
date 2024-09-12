@@ -76,11 +76,11 @@ public class MyFileWriter {
             e.printStackTrace();
         }
 
-        printFileSize(regularFileName);
     }
+    //prints the length of the contents of the file
     public static void printFileSize (String filename){
         File file = new File(filename);
         long fileSize = file.length();
-        System.out.println(fileSize);
+        System.out.println("the length of the file is: "+fileSize);
     }
 }
